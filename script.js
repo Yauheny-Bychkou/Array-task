@@ -5,35 +5,16 @@ let a = document.querySelector("#a"),
   btnMult = document.querySelector("#mult"),
   res = document.querySelector("#res");
 
-const calculator = {
-  sum: function () {
-    let summ = 0;
-    let pow;
-    this.a = +a.value;
-    this.b = +b.value;
-    pow = Math.pow(this.a, this.b);
-
-    while (pow > 0) {
-      summ += pow % 10;
-      pow = Math.floor(pow / 10);
-    }
-    return summ;
-  },
-
-  mult: function () {
-    this.a = +a.value;
-    this.b = +b.value;
-    return Math.pow(this.a, this.b);
-  },
-
-  readValues: function () {
-    btnSum.addEventListener("click", function () {
-      res.value = calculator.sum();
-    });
-    btnMult.addEventListener("click", function () {
-      res.value = calculator.mult();
-    });
-  },
+const powFunc = (a, b) => {
+  let summ = 0;
+  let pow = Math.pow(a, b);
+  console.log("a: ", a);
+  console.log("b: ", b);
+  console.log("pow: ", pow);
+  while (pow > 0) {
+    summ += pow % 10;
+    pow = Math.floor(pow / 10);
+  }
+  return summ;
 };
-
-calculator.readValues();
+console.log("4^8 = 65536, а сумма его цифр составляет 6 + 5 + 5 + 3 + 6 = ", powFunc(4, 8));
