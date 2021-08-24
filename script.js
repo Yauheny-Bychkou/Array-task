@@ -3,12 +3,7 @@ let a = document.querySelector("#a"),
   b = document.querySelector("#b"),
   btnSum = document.querySelector("#sum"),
   btnMult = document.querySelector("#mult"),
-  res = document.querySelector("#res"),
-  option = document.querySelector("option");
-option.text = "Новый пункт";
-option.value = "new_iten";
-
-document.querySelector("#select").add(option);
+  res = document.querySelector("#res");
 
 const calculator = {
   sum: function () {
